@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TicTacToe on the Blockchain</title>
+  </head>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+  </style>
+  <body>
+    <h1>TicTacToe</h1>
+    <h2>Distributed TicTacToe on the Blockchain</h2>
+    <table id="board">
+      <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br><br><button id="create" onclick="App.createNewGame()">Create Game</button>
+    <br><br><button id="join" onclick="App.joinGame()">Join Game</button>
+    <br><br><button onclick="App.useAccountOne()">Use Account #2</button>
+
+    <p id="status"></p>
+    <p>
+      <strong>Hint:</strong> open the browser developer console to view any
+      errors and warnings.
+    </p>
+    <script src="index.js"></script>
+  </body>
+</html>
