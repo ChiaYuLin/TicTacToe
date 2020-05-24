@@ -52,6 +52,7 @@ const App = {
       tictactoeinstance = instance;
 
 
+
       var playerJoinedEvent = tictactoeinstance.PlayerJoined_123456();
       playerJoinedEvent.on("data",(error,eventObj) => {
         if(!error){
@@ -62,9 +63,9 @@ const App = {
         }
       });
 
-
       var nextplayerEvent = tictactoeinstance.NextPlayer_123456();
-      nextplayerEvent.on("data", App.nextPlayer(nextplayerEvent));
+      nextplayerEvent.on("data", App.nextPlayer);
+
 
       console.log(instance);
     }).catch(error=>{
@@ -82,8 +83,9 @@ const App = {
       }).then(txResult =>{
           console.log(txResult);
 
+
           var nextplayerEvent = tictactoeinstance.NextPlayer_123456();
-          nextplayerEvent.on("data", App.nextPlayer(txResult.logs[1]));
+          nextplayerEvent.on("data", App.nextPlayer);
       })
     }
   },
@@ -91,7 +93,7 @@ const App = {
   nextPlayer: function(error, eventObj){
     //Update the board
     App.printBoard();
-
+    console.log("next player event");
     if(eventObj.args.player == account){
       ///our turn
       /*Set the On-click Event Listerner*/
